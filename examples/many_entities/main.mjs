@@ -1,8 +1,8 @@
-import Position from './PeerlessEngine/builtins/components/Position.js'
-import Rectangle from './PeerlessEngine/builtins/components/Rectangle.js'
-import Velocity from './PeerlessEngine/builtins/components/Velocity.js'
-import peerlessengine from './PeerlessEngine/PeerlessEngine.js'
-import RNG from './PeerlessEngine/utilities/RNG.js'
+import Position from '../../PeerlessEngine/builtins/components/Position.js'
+import Rectangle from '../../PeerlessEngine/builtins/components/Rectangle.js'
+import Velocity from '../../PeerlessEngine/builtins/components/Velocity.js'
+import peerlessengine from '../../PeerlessEngine/PeerlessEngine.js'
+import RNG from '../../PeerlessEngine/utilities/RNG.js'
 
 const valid_dot = peerlessengine.get_next_id()
 Position.Add(valid_dot,{x:2,y:5})
@@ -15,7 +15,7 @@ ctx.font = "40px Arial";
 ctx.fillStyle = 'black'
 
 //generate a bunch of test rectangles
-for(let i = 0; i < 30000; i++){
+for(let i = 0; i < 100000; i++){
     let new_rect = peerlessengine.get_next_id()
     Rectangle.Add(new_rect,{width:RNG.Int(3,5),height:RNG.Int(3,5)})
     Position.Add(new_rect,{x:RNG.Int(0,canvas.width),y:RNG.Int(0,canvas.height)})
@@ -57,7 +57,7 @@ function main(){
     }
 
     //draw em
-    ctx.fillStyle = "black"
+    ctx.fillStyle = "grey"
     for(let rect in cool_rectangles){
         let x = Position.x[rect]
         let y = Position.y[rect]
