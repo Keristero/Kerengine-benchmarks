@@ -1,1 +1,1 @@
-# This folder contains a sample game which uses the 'Kerengine' engine to do stuff.
+# This folder contains a sample game which uses the 'PeerlessEngine' to do stuff.
