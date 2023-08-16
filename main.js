@@ -1,10 +1,10 @@
-import Position from './Kerengine/builtins/components/Position.js'
-import Rectangle from './Kerengine/builtins/components/Rectangle.js'
-import Velocity from './Kerengine/builtins/components/Velocity.js'
-import kerengine from './Kerengine/kerengine.js'
-import RNG from './Kerengine/utilities/RNG.js'
+import Position from './PeerlessEngine/builtins/components/Position.js'
+import Rectangle from './PeerlessEngine/builtins/components/Rectangle.js'
+import Velocity from './PeerlessEngine/builtins/components/Velocity.js'
+import peerlessengine from './PeerlessEngine/PeerlessEngine.js'
+import RNG from './PeerlessEngine/utilities/RNG.js'
 
-const valid_dot = kerengine.get_next_id()
+const valid_dot = peerlessengine.get_next_id()
 Position.Add(valid_dot,{x:2,y:5})
 
 console.log(Rectangle)
@@ -16,7 +16,7 @@ ctx.fillStyle = 'black'
 
 //generate a bunch of test rectangles
 for(let i = 0; i < 30000; i++){
-    let new_rect = kerengine.get_next_id()
+    let new_rect = peerlessengine.get_next_id()
     Rectangle.Add(new_rect,{width:RNG.Int(3,5),height:RNG.Int(3,5)})
     Position.Add(new_rect,{x:RNG.Int(0,canvas.width),y:RNG.Int(0,canvas.height)})
     Velocity.Add(new_rect,{x:RNG.Int(-2,2),y:RNG.Int(-2,2)})
@@ -42,7 +42,7 @@ function main(){
     //clear canvas
     ctx.clearRect(0,0,canvas.width,canvas.height)
 
-    let cool_rectangles = kerengine.get_entities([Position,Rectangle,Velocity])
+    let cool_rectangles = peerlessengine.get_entities([Position,Rectangle,Velocity])
     //move em
     for(let rect in cool_rectangles){
         Position.x[rect] += Velocity.x[rect]

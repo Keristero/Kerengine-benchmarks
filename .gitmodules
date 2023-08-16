@@ -1,3 +1,6 @@
 [submodule "Kerengine"]
 	path = Kerengine
 	url = https://github.com/Keristero/Kerengine
+[submodule "PeerlessEngine"]
+	path = PeerlessEngine
+	url = https://github.com/Keristero/PeerlessEngine
